@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [mode, setMode] = useState('light');// whether dark mode is enabled or not
+  const [mode, setMode] = useState('light');
   const [alert, setAlert] = useState(null)
 
   const showAlert = (message, type) => {
@@ -51,13 +51,14 @@ function App() {
   }
   return (
     <>
-      <Router>
+      <Router basename='/textutils'>
       <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route exact path="/about" element={<About mode={mode} />} />
-            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyse " mode={mode} />} />
+            <Route  path="/about" element={<About mode={mode} />} />
+            <Route exact path="/textutils" element={<TextForm showAlert={showAlert} heading="Enter the text to analyse " mode={mode} />} />
+            {/* <TextForm showAlert={showAlert} heading="Enter the text to analyse " mode={mode} /> */}
           </Routes>
         </div>
       </Router>
