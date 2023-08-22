@@ -35,7 +35,7 @@ function App() {
 
   const toggleMode = (cls) => {
     removeBodyClasses();
-    document.body.classList.add('bg-'+cls)
+    document.body.classList.add('bg-'+cls) 
     if (mode === 'light') {
       setMode('dark')
       document.body.style.backgroundColor = '#010893'
